@@ -11,7 +11,7 @@ require('dotenv').config()
 const Drinks = require('./models/schema.js')
 const seedData = require('./models/seed.js')
 
-import seedData
+// import seedData
 app.get('/seed',(req,res) => {
   Drinks.create(seedData,(error,data) => {
     res.send('seed data added')
