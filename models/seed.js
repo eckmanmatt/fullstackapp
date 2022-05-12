@@ -1,8 +1,7 @@
 module.exports = [
   {
     name: "Manhattan",
-    recipe: "Add the bourbon (or rye), sweet vermouth and both bitters to a mixing glass with ice, and stir until well-chilled.
-    Strain into a chilled coupe. Garnish with a brandied cherry or a lemon twist.",
+    recipe: "Add the bourbon, or rye, sweet vermouth and both bitters to a mixing glass with ice, and stir until well-chilled. Strain into a chilled coupe. Garnish with a brandied cherry or a lemon twist.",
     ingredients:[{
       ingredient: 'Rye Whiskey',
       quantity: 2,

@@ -8,15 +8,15 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 
-const Drinks = require('./models/schema.js')
+const Drinks = require('./models/drinkschema.js')
 const seedData = require('./models/seed.js')
 
 // import seedData
-app.get('/seed',(req,res) => {
-  Drinks.create(seedData,(error,data) => {
-    res.send('seed data added')
-  })
-})
+// app.get('/seed',(req,res) => {
+//   Drinks.create(seedData,(error,data) => {
+//     res.send('seed data added')
+//   })
+// })
 
 //___________________
 //Port
@@ -39,7 +39,7 @@ mongoose.connect(MONGODB_URI , () => {
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+// db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //___________________
