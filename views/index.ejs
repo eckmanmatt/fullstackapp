@@ -2,9 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title><%=titleTag%></title>
   </head>
   <body>
-    <h1>Recipe Database</h1>
+    <div class="topnav">
+      <nav>
+        <button type="button" name="Menu">MENU</button>
+      </nav>
+      </div>
+      <h1>Recipe Database</h1>
+      <div class = drinkList>
+        <%for(let i = 0; i < drinks.length; i++){%>
+          <li>
+            <h3><%=drinks[i].name%></h3>
+          </li>
+        <%}%>
+    </div>
   </body>
 </html>
