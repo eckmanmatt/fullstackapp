@@ -8,7 +8,16 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 
-const
+const Drinks = require('./models/schema.js')
+const seedData = require('./models/seed.js')
+
+import seedData
+app.get('/seed',(req,res) => {
+  Drinks.create(seedData,(error,data) => {
+    res.send('seed data added')
+  })
+})
+
 //___________________
 //Port
 //___________________
@@ -53,7 +62,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 app.get('/index',(req,res) => {
-  Music.find({},(error,allDrinks) => {
+  Drinks.find({},(error,allDrinks) => {
     res.render('index.ejs',
   {
     drinks: allDrinks,
