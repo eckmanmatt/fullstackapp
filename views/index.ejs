@@ -6,33 +6,36 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+    <div class="titlebar">
 
-    <div class="header">
-      <h1>homebrewers database</h1>
-    </div>
-
-    <div class="topnav">
-      <nav>
-        <a href="/home">
-        <button type="button" name="Menu">Home</button>
-        </a>
-        <a href="/library/addnew">
-      <button class='addButton'type="button">Add to Library</button>
-    </a>
-      </nav>
+      <div class="header">
+        <h1>homebrewers database</h1>
       </div>
 
-      <div class = beerList>
-        <%for(let i = 0; i < beer.length; i++){%>
-          <li class='beerEntry'>
-            <a href="/library/<%=beer[i]._id%>/show">
+      <div class="topnav">
+        <nav>
+          <a href="/home">
+            <button type="button" name="Menu">Home</button>
+          </a>
+          <a href="/library/addnew">
+            <button class='addButton'type="button">Add to Library</button>
+          </a>
+        </nav>
+      </div>
+      
+    </div>
+
+    <div class = beerList>
+      <%for(let i = 0; i < beer.length; i++){%>
+        <li class='beerEntry'>
+          <a href="/library/<%=beer[i]._id%>/show">
             <h3><%=beer[i].name%></h3>
-            </a>
-            <a href = "/library/<%=beer[i]._id%>/show">
+          </a>
+          <a href = "/library/<%=beer[i]._id%>/show">
             <img class='beerimg' src="<%=beer[i].img%>">
           </a>
-          </li>
-        <%}%>
+        </li>
+      <%}%>
     </div>
 
   </body>

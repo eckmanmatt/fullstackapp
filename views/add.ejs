@@ -8,33 +8,42 @@
   </head>
   <body>
 
-    <nav>
-  <a href="/library">
-    <button class='deleteButton' type="button">Cancel</button>
-  </a>
-</nav>
 
-<div class="header">
-  <h1>homebrewers database</h1>
-</div>
+    <div class="titlebar">
 
-<div class="formContainer">
-    <form class="addForm" action="/library" method="post">
-  <br>
-  Name: <input type="text" name="name" required>
-  <br>
-  Style: <input type="text" name="style" required>
-  <br>
-  IBU: <input type="number" name="ibu">
-  <br>
-  ABV: <input type="text" name="abv" required>
-  <br>
-  Description: <input type="text" name="description" required>
-  <br>
-  <br>
-  <input class='addButton' type="submit" value="Add Entry to Library">
-</form>
-</div>
+      <div class="header">
+        <h1>homebrewers database</h1>
+      </div>
+
+      <div class='topnav'>
+        <nav>
+          <a href="/library">
+            <button class='deleteButton' type="button">Cancel</button>
+          </a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="formContainer">
+      <form id="addForm" action="/library" method="post">
+          <br>
+        Name*: <input class = 'field' type="text" name="name" required>
+          <br>
+        Style*: <input class = 'field' type="text" name="style" required>
+          <br>
+        IBU: <input class = 'field' type="number" name="ibu">
+          <br>
+        ABV*: <input class = 'field' type="text" name="abv" required>
+          <br>
+        Description*: <input class = 'field' type="text" name="description" required>
+          <br>
+        Image URL: <input class = 'field' type="text" name ="image url">
+          <br>
+          <br>
+        <input class='addButton' type="submit" value="Add Entry to Library">
+      </form>
+    </div>
 
   </body>
 </html>

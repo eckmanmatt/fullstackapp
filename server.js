@@ -90,7 +90,7 @@ app.delete('/library/:id/',(req,res) => {
 
 //show entry
 app.get('/library/:id/show',(req,res) => {
-  Beers.findById(req.params.id,(error,selectedBeer) => {
+  Beers.findById({id:req.params.id},(error,selectedBeer) => {
     res.render('show.ejs',{
       titleTag: 'Beer Details',
       beer:selectedBeer
@@ -109,11 +109,10 @@ app.get('/library/:id/edit',(req,res) => {
 
 app.put('/library/:id/', (req,res) => {
   Beers.findByIdAndUpdate(req.params.id, req.body,{new:true},(error,updatedBeer) => {
-    res.redirect('/library/:id/show',{
-      beer:updatedBeer
+    res.redirect('/library/:id/show')
     })
   })
-})
+
 
 
 //home route

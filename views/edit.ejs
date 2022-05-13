@@ -7,6 +7,8 @@
 
   </head>
   <body>
+<div class="titlebar">
+
 
     <div class="header">
       <h1>homebrewers database</h1>
@@ -19,27 +21,32 @@
   </a>
 </nav>
 </div>
+</div>
 
     <div class="formContainer">
-      <h2>Edit <%=beer.name%></h2>
-        <form class="addForm" action="/library/" method="post">
+      <h2>Edit<%=beer.name%></h2>
+      <div class="editForm">
+        <form action="/library/<%=beer._id%>?_method=PUT" method="POST">
       <br>
-      Name: <input type="text" name="name" required>
+      Name: <input type="text" name="name" value="<%=beer.name%>" required>
       <br>
-      Style: <input type="text" name="style" required>
+      Style: <input type="text" name="style" value="<%=beer.style%>"required>
       <br>
-      IBU: <input type="number" name="ibu">
+      IBU: <input type="number" name="ibu" value="<%=beer.ibu%>">
       <br>
-      ABV: <input type="text" name="abv" required>
+      ABV: <input type="text" name="abv" value = "<%=beer.abv%>" required>
       <br>
-      Description: <input type="text" name="description" required>
+      Description: <textarea name="description" rows="8" cols="40" value = "<%=beer.description%>"></textarea>
+      <!-- <input type="text" name="description" value = "<%=beer.description%>" required> -->
       <br>
       <br>
-      Image: <input type="text" name="image">
+      Image: <input type="text" name="image" "<%=beer.img%>">
       <br>
       <br>
       <input class='editButton' type="submit" value="Edit Beer">
     </form>
+    </div>
+
     </div>
 
   </body>

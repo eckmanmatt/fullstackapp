@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+<div class="titlebar">
+
 
     <div class="header">
       <h1>homebrewers database</h1>
     </div>
-
+</div>
     <div class="confirmDelete">
       <h2>Are you sure you want to delete <%=beer.name%> from your database?</h2>
     <form action="/library/<%=beer._id%>?_method=DELETE" method="POST">
