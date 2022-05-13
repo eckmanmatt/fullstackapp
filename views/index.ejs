@@ -8,13 +8,19 @@
     <div class="topnav">
       <nav>
         <button type="button" name="Menu">MENU</button>
+        <a href="/library/addnew">
+      <button class='addButton'type="button">Add to Library</button>
+    </a>
       </nav>
       </div>
-      <h1>Recipe Database</h1>
-      <div class = drinkList>
-        <%for(let i = 0; i < drinks.length; i++){%>
-          <li>
-            <h3><%=drinks[i].name%></h3>
+      <h1>Beer Database</h1>
+      <h4></h4>
+      <div class = beerList>
+        <%for(let i = 0; i < beers.length; i++){%>
+          <li class='beerEntry'>
+            <a href="/library/<%=beers[i]._id%>/show">
+            <h3><%=beers[i].name%></h3>
+            </a>
           </li>
         <%}%>
     </div>

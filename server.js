@@ -8,12 +8,12 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 
-const Drinks = require('./models/drinkschema.js')
+const Beers = require('./models/beerschema.js')
 const seedData = require('./models/seed.js')
 
 // import seedData
 // app.get('/seed',(req,res) => {
-//   Drinks.create(seedData,(error,data) => {
+//   Beers.create(seedData,(error,data) => {
 //     res.send('seed data added')
 //   })
 // })
@@ -33,9 +33,13 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , () => {
-  {console.log('connected to mongo')}}
-)
+
+mongoose.connect('mongodb://localhost:27017/beers',() => {
+  console.log('connected to local');
+})
+// mongoose.connect(MONGODB_URI , () => {
+//   {console.log('connected to mongo atlas')}}
+// )
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -61,15 +65,43 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/',(req,res) => {
-  Drinks.find({},(error,allDrinks) => {
+
+//add new entry
+app.get('/library/addnew',(req,res) => {
+  res.render('add.ejs',{
+    titleTag:'Add to Library'
+  })
+})
+
+//show entry
+app.get('/library/:id/show',(req,res) => {
+  Beers.findById(req.params.id,(error,selectedBeer) => {
+    res.render('show.ejs',{
+      titleTag: 'Beer Details',
+      beer:selectedBeer
+    })
+  })
+})
+
+//library route
+app.get('/library',(req,res) => {
+  Beers.find({},(error,allBeers) => {
     res.render('index.ejs',
   {
-    drinks: allDrinks,
+    beers: allBeers,
     titleTag: 'Library'
   })
   })
 })
+
+app.post('/library',(req,res) => {
+  Beers.create(req.body,(error,addNew) => {
+    res.redirect('/library')
+  })
+})
+
+
+
 
 //___________________
 //Listener
