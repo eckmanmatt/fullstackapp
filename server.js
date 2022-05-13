@@ -12,11 +12,11 @@ const Beers = require('./models/beerschema.js')
 const seedData = require('./models/seed.js')
 
 // import seedData
-// app.get('/seed',(req,res) => {
-//   Beers.create(seedData,(error,data) => {
-//     res.send('seed data added')
-//   })
-// })
+app.get('/seed',(req,res) => {
+  Beers.create(seedData,(error,data) => {
+    res.send('seed data added')
+  })
+})
 
 //___________________
 //Port
@@ -73,6 +73,21 @@ app.get('/library/addnew',(req,res) => {
   })
 })
 
+//delete entry
+app.get('/library/:id/delete',(req,res) => {
+  Beers.findById(req.params.id,(error,data) => {
+    res.render('delete.ejs',{
+      beer:data
+    })
+  })
+})
+
+app.delete('/library/:id/',(req,res) => {
+  Beers.findByIdAndRemove(req.params.id,(error,data) => {
+    res.redirect('/library')
+  })
+})
+
 //show entry
 app.get('/library/:id/show',(req,res) => {
   Beers.findById(req.params.id,(error,selectedBeer) => {
@@ -83,12 +98,37 @@ app.get('/library/:id/show',(req,res) => {
   })
 })
 
+//edit entries
+app.get('/library/:id/edit',(req,res) => {
+  Beers.findById(req.params.id, (error,foundBeer) => {
+  res.render('edit.ejs',{
+    beer: foundBeer,
+  })
+})
+})
+
+app.put('/library/:id/', (req,res) => {
+  Beers.findByIdAndUpdate(req.params.id, req.body,{new:true},(error,updatedBeer) => {
+    res.redirect('/library/:id/show',{
+      beer:updatedBeer
+    })
+  })
+})
+
+
+//home route
+app.get('/home',(req,res) => {
+    res.render('home.ejs',{
+      titleTag:'Home'
+    })
+})
+
 //library route
 app.get('/library',(req,res) => {
   Beers.find({},(error,allBeers) => {
     res.render('index.ejs',
   {
-    beers: allBeers,
+    beer: allBeers,
     titleTag: 'Library'
   })
   })
@@ -96,7 +136,7 @@ app.get('/library',(req,res) => {
 
 app.post('/library',(req,res) => {
   Beers.create(req.body,(error,addNew) => {
-    res.redirect('/library')
+    res.redirect('/library/')
   })
 })
 

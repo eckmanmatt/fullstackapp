@@ -3,26 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title><%=titleTag%></title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+
+    <div class="header">
+      <h1>homebrewers database</h1>
+    </div>
+
     <div class="topnav">
       <nav>
-        <button type="button" name="Menu">MENU</button>
+        <a href="/home">
+        <button type="button" name="Menu">Home</button>
+        </a>
         <a href="/library/addnew">
       <button class='addButton'type="button">Add to Library</button>
     </a>
       </nav>
       </div>
-      <h1>Beer Database</h1>
-      <h4></h4>
+
       <div class = beerList>
-        <%for(let i = 0; i < beers.length; i++){%>
+        <%for(let i = 0; i < beer.length; i++){%>
           <li class='beerEntry'>
-            <a href="/library/<%=beers[i]._id%>/show">
-            <h3><%=beers[i].name%></h3>
+            <a href="/library/<%=beer[i]._id%>/show">
+            <h3><%=beer[i].name%></h3>
             </a>
+            <a href = "/library/<%=beer[i]._id%>/show">
+            <img class='beerimg' src="<%=beer[i].img%>">
+          </a>
           </li>
         <%}%>
     </div>
+
   </body>
 </html>

@@ -1,0 +1,33 @@
+.header{
+  display: block;
+  text-align: center;
+  border: 2px solid black;
+background: beige;
+}
+.topnav{
+  display: flex;
+  justify-content: center;
+
+  border: 2px solid black;
+  width: 400px;
+}
+.beerList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.beerimg{
+  width:auto;
+  height:400px;
+}
+li{
+  list-style-type: none;
+  text-align: center;
+}
+.beerEntry{
+  background: lightblue;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+}

@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/style.css">
+
   </head>
   <body>
+
     <nav>
   <a href="/library">
     <button class='deleteButton' type="button">Cancel</button>
   </a>
 </nav>
 
+<div class="header">
+  <h1>homebrewers database</h1>
+</div>
 
+<div class="formContainer">
     <form class="addForm" action="/library" method="post">
   <br>
   Name: <input type="text" name="name" required>
@@ -27,6 +34,7 @@
   <br>
   <input class='addButton' type="submit" value="Add Entry to Library">
 </form>
+</div>
 
   </body>
 </html>

@@ -3,20 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title><%=titleTag%></title>
+    <link rel="stylesheet" href="/style.css">
+
   </head>
   <body>
+
+    <div class="header">
+      <h1>homebrewers database</h1>
+    </div>
+
+  <div class="topnav">
     <nav>
-        <a href="/library">
-          <button class='deleteButton' type="button">Cancel</button>
-        </a>
+      <a href="/library">
+        <button type="button">Back to Library</button>
+      </a>
+      <a href="/library/<%=beer._id%>/edit">
+        <button class = 'editButton' type="button">Edit Entry</button>
+      </a>
+      <a href="/library/<%=beer._id%>/delete">
+        <button class = 'deleteButton' type="button">Delete Entry</button>
+      </a>
     </nav>
+
+  </div>
 
     <div>
       <h2><%=beer.name%></h2>
       <h3><%=beer.style%></h3>
       <h3>IBU: <%=beer.ibu%></h3>
-      <h3>ABV: <%=beer.abv%></h3>
+      <h3>ABV: <%=beer.abv%>%</h3>
       <h3><%=beer.description%></h3>
+      <h3><img src="<%=beer.img%>"></h3>
     </div>
 
   </body>
