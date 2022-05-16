@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title><%=titleTag%></title>
-    <link rel="stylesheet" href="/style.css">
+<%- include('./partials/head.ejs')%>
 
-  </head>
   <body>
-<div class="titlebar">
+<div class= "titlebar">
 
-
-    <div class="header">
-      <h1>homebrewers database</h1>
-    </div>
+  <%- include('./partials/header.ejs')%>
 
   <div class="topnav">
     <nav>
@@ -26,17 +17,20 @@
         <button class = 'deleteButton' type="button">Delete Entry</button>
       </a>
     </nav>
-
   </div>
 </div>
-    <div>
-      <h2><%=beer.name%></h2>
+</div>
+
+<div class="showPage">
+    <div class='showInfo'>
+      <h2><span id='ul'><%=beer.name%></span></h2>
       <h3><%=beer.style%></h3>
-      <h3>IBU: <%=beer.ibu%></h3>
-      <h3>ABV: <%=beer.abv%>%</h3>
       <h3><%=beer.description%></h3>
-      <h3><img src="<%=beer.img%>"></h3>
+      <h3><img class='beerimg' src="<%=beer.img%>"></h3>
+      <h3>ABV: <%=beer.abv%></h3>
+      <h3>IBU: <%=beer.ibu%></h3>
     </div>
+</div>
 
   </body>
 </html>

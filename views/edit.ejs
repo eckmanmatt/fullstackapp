@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Edit <%=beer.name%></title>
-    <link rel="stylesheet" href="/style.css">
+<%- include('./partials/head.ejs')%>
 
-  </head>
   <body>
 <div class="titlebar">
 
 
-    <div class="header">
-      <h1>homebrewers database</h1>
-    </div>
+    <%- include('./partials/header.ejs')%>
 
 <div class="topnav">
     <nav>
@@ -24,23 +16,22 @@
 </div>
 
     <div class="formContainer">
-      <h2>Edit<%=beer.name%></h2>
+      <h2>Edit <br><span id='ul'><%=beer.name%></span></h2>
       <div class="editForm">
-        <form action="/library/<%=beer._id%>?_method=PUT" method="POST">
+        <form action="/library/<%=beer.id%>?_method=PUT" method="POST">
       <br>
-      Name: <input type="text" name="name" value="<%=beer.name%>" required>
+      Name: <input class = 'field' type="text" name="name" value="<%=beer.name%>" required>
       <br>
-      Style: <input type="text" name="style" value="<%=beer.style%>"required>
+      Style: <input class = 'field' type="text" name="style" value="<%=beer.style%>"required>
       <br>
-      IBU: <input type="number" name="ibu" value="<%=beer.ibu%>">
+      IBU: <input class = 'field' type="number" name="ibu" value="<%=beer.ibu%>">
       <br>
-      ABV: <input type="text" name="abv" value = "<%=beer.abv%>" required>
+      ABV: <input class = 'field' type="text" name="abv" value = "<%=beer.abv%>" required>
       <br>
-      Description: <textarea name="description" rows="8" cols="40" value = "<%=beer.description%>"></textarea>
-      <!-- <input type="text" name="description" value = "<%=beer.description%>" required> -->
+      Description: <input class = 'field' type="text" name="description" value = "<%=beer.description%>" required>
       <br>
       <br>
-      Image: <input type="text" name="image" "<%=beer.img%>">
+      Image URL: <input class = 'field' type="text" name="img" value="<%=beer.img%>">
       <br>
       <br>
       <input class='editButton' type="submit" value="Edit Beer">

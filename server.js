@@ -77,7 +77,8 @@ app.get('/library/addnew',(req,res) => {
 app.get('/library/:id/delete',(req,res) => {
   Beers.findById(req.params.id,(error,data) => {
     res.render('delete.ejs',{
-      beer:data
+      beer:data,
+      titleTag:'Delete'
     })
   })
 })
@@ -90,7 +91,7 @@ app.delete('/library/:id/',(req,res) => {
 
 //show entry
 app.get('/library/:id/show',(req,res) => {
-  Beers.findById({id:req.params.id},(error,selectedBeer) => {
+  Beers.findById(req.params.id,(error,selectedBeer) => {
     res.render('show.ejs',{
       titleTag: 'Beer Details',
       beer:selectedBeer
@@ -100,16 +101,21 @@ app.get('/library/:id/show',(req,res) => {
 
 //edit entries
 app.get('/library/:id/edit',(req,res) => {
-  Beers.findById(req.params.id, (error,foundBeer) => {
+Beers.findById(req.params.id, (error,foundBeer) => {
   res.render('edit.ejs',{
     beer: foundBeer,
+    titleTag: 'Edit'
   })
 })
 })
 
 app.put('/library/:id/', (req,res) => {
   Beers.findByIdAndUpdate(req.params.id, req.body,{new:true},(error,updatedBeer) => {
-    res.redirect('/library/:id/show')
+    if(error){
+      console.log(error);
+    }else{
+    res.redirect('/library')
+  }
     })
   })
 

@@ -1,5 +1,6 @@
 body{
-  background: #EAAE6E;
+  /* background: #EAAE6E; */
+  background: lightgrey;
 }
 
 .titlebar{
@@ -15,7 +16,8 @@ body{
   width:80%;
   padding: 5px;
   margin: 5px;
-
+  border: 2px solid #2D7350;
+  border-radius: 5px;
 }
 .topnav{
   display: flex;
@@ -24,9 +26,15 @@ body{
   width: 75%;
   padding: 5px;
   margin: 5px;
+  margin-bottom: 20px;
+  border: 2px solid #2D7350;
+  border-radius: 5px;
 }
-nav button{
-  background: #;
+button{
+  background: #EAAE6E ;
+  padding: 3px;
+  margin: 3px;
+  color: white;
 }
 
 .beerList{
@@ -35,19 +43,32 @@ nav button{
     justify-content: center;
     align-items: center;
 }
-.beerimg{
-  width:auto;
-  height:400px;
-}
+
 li{
   list-style-type: none;
   text-align: center;
 }
 .beerEntry{
-  background: lightblue;
-  border: 2px solid black;
+  background: #2D7350;
+  border: 2px solid #2D7350;
+  border-radius: 5px;
   padding: 5px;
   margin: 5px;
+  width: 250px;
+  height: 325px;
+  color: white;
+}
+.beerTitle{
+  background: #EAAE6E;
+  text-shadow: 0 0 3px #2D7350;
+  color: black;
+  width: auto;
+  margin-top: 5px;
+}
+.beerimg{
+  width:200px;
+  height:250px;
+  object-fit: contain;
 }
 a {
   text-decoration: none;
@@ -56,12 +77,13 @@ a:visited{
   text-decoration: none;
   color: black;
 }
+a:hover{
+  opacity: .8;
+}
 .formContainer{
-  border: 2px solid black;
-  display: inline-block;
+  text-align: center;
 }
 #addForm{
-  border: 2px solid black;
   width: 600px;
   text-align: center;
   font-size: larger;
@@ -70,7 +92,51 @@ a:visited{
 }
 input.field{
   font-size: larger;
+  margin: 2px;
+  padding:2px;
 }
 input.addButton{
   font-size: large;
+}
+.showPage{
+  display: flex;
+  justify-content: center;
+}
+.showInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:400px;
+  text-align: center;
+  background-color: #EAAE6E;
+}
+#ul{
+  text-decoration: underline;
+}
+.editForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.homepage{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 600px,
+
+}
+.homeIntro{
+  width:50%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px;
+  font-size: 20px;
+  background: #2D7350;
+  text-align: center;
+}
+.deleteButton{
+  background: red;
+  color: white;
 }

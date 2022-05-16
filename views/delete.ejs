@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
+<%- include('./partials/head.ejs')%>
+
   <body>
 <div class="titlebar">
+  
+    <%- include('./partials/header.ejs')%>
 
-
-    <div class="header">
-      <h1>homebrewers database</h1>
-    </div>
 </div>
     <div class="confirmDelete">
       <h2>Are you sure you want to delete <%=beer.name%> from your database?</h2>
@@ -20,7 +13,7 @@
     </form>
 
     <a href="/library">
-      <button class='deleteButton' type="button">No, Take Me Back</button>
+      <button class='cancelButton' type="button">No, Take Me Back</button>
     </a>
   </div>
 
