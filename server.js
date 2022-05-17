@@ -7,16 +7,12 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+const beerController = require('./controllers/router.js')
+app.use(fruitsController)
 
-const Beers = require('./models/beerschema.js')
+// const Beers = require('./models/beerschema.js')
 const seedData = require('./models/seed.js')
 
-// import seedData
-app.get('/seed',(req,res) => {
-  Beers.create(seedData,(error,data) => {
-    res.send('seed data added')
-  })
-})
 
 //___________________
 //Port
@@ -60,91 +56,6 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
-
-//___________________
-// Routes
-//___________________
-//localhost:3000
-
-//add new entry
-app.get('/library/addnew',(req,res) => {
-  res.render('add.ejs',{
-    titleTag:'Add to Library'
-  })
-})
-
-//delete entry
-app.get('/library/:id/delete',(req,res) => {
-  Beers.findById(req.params.id,(error,data) => {
-    res.render('delete.ejs',{
-      beer:data,
-      titleTag:'Delete'
-    })
-  })
-})
-
-app.delete('/library/:id/',(req,res) => {
-  Beers.findByIdAndRemove(req.params.id,(error,data) => {
-    res.redirect('/library')
-  })
-})
-
-//show entry
-app.get('/library/:id/show',(req,res) => {
-  Beers.findById(req.params.id,(error,selectedBeer) => {
-    res.render('show.ejs',{
-      titleTag: 'Beer Details',
-      beer:selectedBeer
-    })
-  })
-})
-
-//edit entries
-app.get('/library/:id/edit',(req,res) => {
-Beers.findById(req.params.id, (error,foundBeer) => {
-  res.render('edit.ejs',{
-    beer: foundBeer,
-    titleTag: 'Edit'
-  })
-})
-})
-
-app.put('/library/:id/', (req,res) => {
-  Beers.findByIdAndUpdate(req.params.id, req.body,{new:true},(error,updatedBeer) => {
-    if(error){
-      console.log(error);
-    }else{
-    res.redirect('/library')
-  }
-    })
-  })
-
-
-
-//home route
-app.get('/home',(req,res) => {
-    res.render('home.ejs',{
-      titleTag:'Home'
-    })
-})
-
-//library route
-app.get('/library',(req,res) => {
-  Beers.find({},(error,allBeers) => {
-    res.render('index.ejs',
-  {
-    beer: allBeers,
-    titleTag: 'Library'
-  })
-  })
-})
-
-app.post('/library',(req,res) => {
-  Beers.create(req.body,(error,addNew) => {
-    res.redirect('/library/')
-  })
-})
 
 
 
