@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Beers = require('../models/beerschema.js')
 
+const seedData = require('../models/seed.js')
 
 
 
@@ -35,7 +36,7 @@ router.get('/library/:id/delete',(req,res) => {
 
 router.delete('/library/:id/',(req,res) => {
   Beers.findByIdAndRemove(req.params.id,(error,data) => {
-    res.redirect('/library')
+    res.redirect('/beer/library/')
   })
 })
 
@@ -68,7 +69,7 @@ router.put('/library/:id/', (req,res) => {
     if(error){
       console.log(error);
     }else{
-    res.redirect('/library')
+    res.redirect('/beer/library/')
   }
     })
   })
@@ -95,9 +96,9 @@ router.put('/library/:id/', (req,res) => {
     })
   })
 
-  router.post('/library',(req,res) => {
+  router.post('/beer/library',(req,res) => {
     Beers.create(req.body,(error,addNew) => {
-      res.redirect('/library/')
+      res.redirect('/beer/library/')
     })
   })
 

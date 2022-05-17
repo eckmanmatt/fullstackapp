@@ -8,10 +8,11 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const beerController = require('./controllers/router.js')
-app.use('/beers',beerController)
+
 
 // const Beers = require('./models/beerschema.js')
-const seedData = require('./models/seed.js')
+
+// const seedData = require('./models/seed.js')
 
 
 //___________________
@@ -58,6 +59,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
+app.use('/beer', beerController)
 
 
 //___________________

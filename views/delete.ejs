@@ -2,17 +2,17 @@
 
   <body>
 <div class="titlebar">
-  
+
     <%- include('./partials/header.ejs')%>
 
 </div>
     <div class="confirmDelete">
       <h2>Are you sure you want to delete <%=beer.name%> from your database?</h2>
-    <form action="/library/<%=beer._id%>?_method=DELETE" method="POST">
+    <form action="/beer/library/<%=beer._id%>?_method=DELETE" method="POST">
       <input class = 'deleteButton'  type="submit" value="Yes, Delete Forever"/>
     </form>
 
-    <a href="/library">
+    <a href="/beer/library">
       <button class='cancelButton' type="button">No, Take Me Back</button>
     </a>
   </div>

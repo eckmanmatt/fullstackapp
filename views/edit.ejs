@@ -8,7 +8,7 @@
 
 <div class="topnav">
     <nav class = 'menubar'>
-  <a href="/library/<%=beer._id%>/show">
+  <a href="/beer/library/<%=beer._id%>/show">
     <button class='deleteButton' type="button">Cancel</button>
   </a>
 </nav>
@@ -18,7 +18,7 @@
     <div class="formContainer">
       <h2>Edit <br><span id='ul'><%=beer.name%></span></h2>
       <div id="editForm">
-        <form action="/library/<%=beer.id%>?_method=PUT" method="POST">
+        <form action="/beer/library/<%=beer.id%>?_method=PUT" method="POST">
       <br>
       Name*: <input class = 'field' type="text" name="name" value="<%=beer.name%>" required>
       <br>

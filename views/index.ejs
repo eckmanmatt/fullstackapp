@@ -7,10 +7,10 @@
 
       <div class="topnav">
         <nav class = 'menubar'>
-          <a href="/home">
+          <a href="/beer/home">
             <button type="button" class = "lnr lnr-home"name="Menu"></button>
           </a>
-          <a href="/library/addnew">
+          <a href="/beer/library/addnew">
             <button class='addButton lnr lnr-plus-circle'type="button"></button>
           </a>
 
@@ -26,10 +26,10 @@
       <ul id = "beerList">
       <%for(let i = 0; i < beer.length; i++){%>
         <li id='beerEntry'>
-          <a href="/library/<%=beer[i]._id%>/show">
+          <a href="/beer/library/<%=beer[i]._id%>/show">
             <h3 class="beerTitle"><%=beer[i].name%></h3>
           </a>
-          <a href = "/library/<%=beer[i]._id%>/show">
+          <a href = "/beer/library/<%=beer[i]._id%>/show">
             <img class='beerimg' src="<%=beer[i].img%>" onerror="this.onerror=null;this.src='https://i.imgur.com/UESZFZQ.png?1';">
           </a>
         </li>
