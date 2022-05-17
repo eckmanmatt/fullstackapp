@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Beer = require('./models/beerschema.js')
+const Beers = require('./models/beerschema.js')
 
 module.exports = router
 
