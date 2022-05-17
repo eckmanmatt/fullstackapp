@@ -30,16 +30,17 @@ const PORT = process.env.PORT
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
 
+
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
 
-mongoose.connect('mongodb://localhost:27017/beers',() => {
-  console.log('connected to local');
-})
-// mongoose.connect(MONGODB_URI , () => {
-//   {console.log('connected to mongo atlas')}}
-// )
+// mongoose.connect('mongodb://localhost:27017/beers',() => {
+//   console.log('connected to local');
+// })
+mongoose.connect(MONGODB_URI , () => {
+  {console.log('connected to mongo atlas')}}
+)
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
