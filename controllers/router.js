@@ -74,6 +74,10 @@ router.put('/library/:id/', (req,res) => {
     })
   })
 
+// redirect
+router.get('/',(req,res) => {
+  res.redirect('/beer/home')
+})
 
 
   //home route
