@@ -7,7 +7,7 @@
     <%- include('./partials/header.ejs')%>
 
 <div class="topnav">
-    <nav>
+    <nav class = 'menubar'>
   <a href="/library/<%=beer._id%>/show">
     <button class='deleteButton' type="button">Cancel</button>
   </a>
@@ -17,18 +17,18 @@
 
     <div class="formContainer">
       <h2>Edit <br><span id='ul'><%=beer.name%></span></h2>
-      <div class="editForm">
+      <div id="editForm">
         <form action="/library/<%=beer.id%>?_method=PUT" method="POST">
       <br>
-      Name: <input class = 'field' type="text" name="name" value="<%=beer.name%>" required>
+      Name*: <input class = 'field' type="text" name="name" value="<%=beer.name%>" required>
       <br>
-      Style: <input class = 'field' type="text" name="style" value="<%=beer.style%>"required>
+      Style*: <input class = 'field' type="text" name="style" value="<%=beer.style%>"required>
       <br>
       IBU: <input class = 'field' type="number" name="ibu" value="<%=beer.ibu%>">
       <br>
-      ABV: <input class = 'field' type="text" name="abv" value = "<%=beer.abv%>" required>
+      ABV*: <input class = 'field' type="text" name="abv" value = "<%=beer.abv%>" required>
       <br>
-      Description: <input class = 'field' type="text" name="description" value = "<%=beer.description%>" required>
+      Description*: <input class = 'field' type="text" name="description" value = "<%=beer.description%>" required>
       <br>
       <br>
       Image URL: <input class = 'field' type="text" name="img" value="<%=beer.img%>">

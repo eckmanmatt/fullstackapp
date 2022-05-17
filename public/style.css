@@ -7,48 +7,65 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0px;
 }
+
 .header{
   display: flex;
   justify-content: center;
   background: #2D7350;
   color: #EAAE6E;
   width:80%;
-  padding: 5px;
-  margin: 5px;
+  padding: 0px;
+  margin: 0px;
   border: 2px solid #2D7350;
   border-radius: 5px;
 }
+
 .topnav{
   display: flex;
   justify-content: space-around;
   background: #2D7350;
   width: 75%;
-  padding: 5px;
+  padding: 0px;
   margin: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 2px solid #2D7350;
   border-radius: 5px;
 }
-button{
+
+.menubar{
+  display: flex;
+  justify-content: space-around;
+}
+
+.menubar button{
   background: #EAAE6E ;
   padding: 3px;
   margin: 3px;
   color: white;
+  border: 2px solid #2D7350;
+  border-radius: 5px;
+  width:75px;
+  height:30px;
+  font-size: large;
 }
 
-.beerList{
+#beerList{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding:0px;
+    margin: 0px;
 }
 
 li{
   list-style-type: none;
   text-align: center;
 }
-.beerEntry{
+
+#beerEntry{
   background: #2D7350;
   border: 2px solid #2D7350;
   border-radius: 5px;
@@ -58,50 +75,57 @@ li{
   height: 325px;
   color: white;
 }
+
 .beerTitle{
   background: #EAAE6E;
   text-shadow: 0 0 3px #2D7350;
   color: black;
   width: auto;
   margin-top: 5px;
+  border: 2px solid #2D7350;
+  border-radius: 5px;
 }
+
 .beerimg{
   width:200px;
   height:250px;
   object-fit: contain;
 }
+
 a {
   text-decoration: none;
 }
+
 a:visited{
   text-decoration: none;
   color: black;
 }
+
 a:hover{
   opacity: .8;
 }
+
 .formContainer{
   text-align: center;
 }
-#addForm{
-  width: 600px;
-  text-align: center;
-  font-size: larger;
-  display: inline-block;
 
-}
 input.field{
   font-size: larger;
   margin: 2px;
   padding:2px;
 }
-input.addButton{
+
+.addButton{
   font-size: large;
+  background: #2D7350;
+  color: white;
 }
+
 .showPage{
   display: flex;
   justify-content: center;
 }
+
 .showInfo{
   display: flex;
   flex-direction: column;
@@ -109,23 +133,42 @@ input.addButton{
   justify-content: center;
   width:400px;
   text-align: center;
-  background-color: #EAAE6E;
+  background-color: #2D7350;
+  color: #EAAE6E;
 }
-#ul{
+
+h2#ul{
   text-decoration: underline;
+  color: #EAAE6E;
 }
-.editForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+h3#info{
+  color: #EAAE6E;
+  font-weight: lighter;
+  margin: 5px;
+  word-wrap: normal;
 }
+
+#addForm{
+  display: inline-block;
+  width: 600px;
+  text-align: center;
+  font-size: larger;
+}
+
+#editForm{
+  display: inline-block;
+  width: 600px;
+  text-align: center;
+  font-size: larger;
+}
+
 .homepage{
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 600px,
-
 }
+
 .homeIntro{
   width:50%;
   border: 2px solid black;
@@ -136,7 +179,30 @@ input.addButton{
   background: #2D7350;
   text-align: center;
 }
+
 .deleteButton{
-  background: red;
+  background:#ff0000;
   color: white;
+  text-align: center;
+  padding: 3px;
+  margin: 3px;
+  color: white;
+  border: 2px solid #2D7350;
+  border-radius: 5px;
+  width:75px;
+  height:30px;
+  font-size: 40;
+}
+.search{
+  display: flex;
+  justify-content: center;
+  background: #2D7350;
+  padding: 5px;
+  margin-bottom:15px;
+  width:50%;
+  border: 2px solid #2D7350;
+  border-radius: 5px;
+}
+.search input{
+  font-size: large;
 }

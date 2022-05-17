@@ -8,7 +8,7 @@
       <%- include('./partials/header.ejs')%>
 
       <div class='topnav'>
-        <nav>
+        <nav class = 'menubar'>
           <a href="/library">
             <button class='deleteButton' type="button">Cancel</button>
           </a>
@@ -18,6 +18,7 @@
     </div>
 
     <div class="formContainer">
+      <h2>Add New Beer Entry<br></h2>
       <form id="addForm" action="/library" method="post">
           <br>
         Name*: <input class = 'field' type="text" name="name" required>
@@ -33,7 +34,8 @@
         Image URL: <input class = 'field' type="text" name ="image url">
           <br>
           <br>
-        <input class='addButton' type="submit" value="Add Entry to Library">
+        <button class = 'addButton lnr lnr-checkmark-circle' type="submit"></button>
+
       </form>
     </div>
 

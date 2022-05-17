@@ -6,30 +6,35 @@
   <%- include('./partials/header.ejs')%>
 
   <div class="topnav">
-    <nav>
+    <nav class = 'menubar'>
       <a href="/library">
-        <button type="button">Back to Library</button>
+        <button type="button" class = "lnr lnr-database"></button>
       </a>
       <a href="/library/<%=beer._id%>/edit">
-        <button class = 'editButton' type="button">Edit Entry</button>
+        <button class = 'editButton lnr lnr-pencil' type="button"></button>
       </a>
-      <a href="/library/<%=beer._id%>/delete">
-        <button class = 'deleteButton' type="button">Delete Entry</button>
-      </a>
+
     </nav>
   </div>
-</div>
 </div>
 
 <div class="showPage">
     <div class='showInfo'>
-      <h2><span id='ul'><%=beer.name%></span></h2>
-      <h3><%=beer.style%></h3>
-      <h3><%=beer.description%></h3>
-      <h3><img class='beerimg' src="<%=beer.img%>"></h3>
-      <h3>ABV: <%=beer.abv%></h3>
-      <h3>IBU: <%=beer.ibu%></h3>
+      <h2 id='ul'><%=beer.name%></h2>
+      <h3 id='info'><%=beer.style%></h3>
+      <h3 id='info'><%=beer.description%></h3>
+      <h3><img class='beerimg' src="<%=beer.img%>" onerror="this.onerror=null;this.src='https://i.imgur.com/UESZFZQ.png?1'; title='no image added'"></h3>
+      <h3 id='info'>ABV: <%=beer.abv%></h3>
+      <h3 id='info'>IBU: <%=beer.ibu%></h3>
+      <br>
+      <br>
+      <br>
+      <a href="/library/<%=beer._id%>/delete">
+        <button class = 'deleteButton lnr lnr-trash' type="button"></button>
+      </a>
+      <br>
     </div>
+
 </div>
 
   </body>
