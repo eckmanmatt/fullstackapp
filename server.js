@@ -8,7 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const beerController = require('./controllers/router.js')
-app.use(fruitsController)
+app.use('/beers',beerController)
 
 // const Beers = require('./models/beerschema.js')
 const seedData = require('./models/seed.js')
