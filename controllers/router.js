@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const Beers = require('./models/beerschema.js')
+const Beers = require('../models/beerschema.js')
 
-module.exports = router
 
 
 
@@ -101,3 +100,5 @@ router.put('/library/:id/', (req,res) => {
       res.redirect('/library/')
     })
   })
+
+  module.exports = router
