@@ -7,9 +7,8 @@
 
   <div class="topnav">
     <nav class = 'menubar'>
-      <a href="/beer/library">
-        <button type="button" class = "lnr lnr-database"></button>
-      </a>
+        <%- include('./partials/nav.ejs')%>
+
       <a href="/beer/library/<%=beer._id%>/edit">
         <button class = 'editButton lnr lnr-pencil' type="button"></button>
       </a>
@@ -19,22 +18,7 @@
 </div>
 
 <div class="showPage">
-    <div class='showInfo'>
-      <h2 id='ul'><%=beer.name%></h2>
-      <h3 id='info'><%=beer.style%></h3>
-      <h3 id='info'><%=beer.description%></h3>
-      <h3><img class='beerimg' src="<%=beer.img%>" onerror="this.onerror=null;this.src='https://i.imgur.com/UESZFZQ.png?1'; title='no image added'"></h3>
-      <h3 id='info'>ABV: <%=beer.abv%></h3>
-      <h3 id='info'>IBU: <%=beer.ibu%></h3>
-      <br>
-      <br>
-      <br>
-      <a href="/beer/library/<%=beer._id%>/delete">
-        <button class = 'deleteButton lnr lnr-trash' type="button"></button>
-      </a>
-      <br>
-    </div>
-
+  <%- include('./partials/showinfo.ejs')%>
 </div>
 
   </body>

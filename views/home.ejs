@@ -2,34 +2,33 @@
 
   <body>
 
-    <div class="titlebar">
+    <div class="titlebarHome">
 
-      <%- include('./partials/header.ejs')%>
+      <div class="headerHome">
+        <h1 id = 'headerHome'>HomeBrew DataBase</h1>
+        </div>
+<nav class="menubar">
 
-      <div class="topnav">
-        <nav class ="menubar">
-          <a href="/beer/home">
-            <button type="button" class ="lnr lnr-home" name="home"></button>
-          </a>
-          <a href="/beer/library">
-            <button class='button lnr lnr-database' type="button" name = 'library'></button>
-          </a>
-        </nav>
+
+      <div class="topnavHome">
+        <%- include('./partials/nav.ejs')%>
       </div>
 
-    </div>
+    </nav>
+</div>
 
 <div class="homepage">
 
   <div class="homeIntro">
     <h4>Being an avid homebrewer, I have created a database containing personal brews along with images and comments about them to try next time.</h4>
-  </div>
 
-    <div class="homeIntro">
-      <h4>In the library you can add new brew entries, edit existing brew entries and others can leave critiques/feedback to your brews.</h4>
+    <h4>In the library you can add new brew entries, edit existing brew entries and others can leave critiques/feedback to your brews.</h4>
     </div>
 
 
 </div>
+
+
+
   </body>
 </html>

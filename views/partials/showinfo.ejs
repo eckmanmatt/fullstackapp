@@ -1,0 +1,16 @@
+<div class='showInfo'>
+  <h2 id='showName'><%=beer.name%></h2>
+  <h3 id='info'><%=beer.style%></h3>
+  <h3 id='info'><%=beer.description%></h3>
+  <h3><img class='beerimg' src="<%=beer.img%>" onerror="this.onerror=null;this.src='https://i.imgur.com/UESZFZQ.png?1'; title='no image added'"></h3>
+  <h3 id='info'>ABV: <%=beer.abv%></h3>
+    <%if (beer.ibu !== null){%>
+      <h3 id='info'>IBU: <%=beer.ibu%></h3>
+    <%}%>
+  <br>
+  <br>
+  <a href="/beer/library/<%=beer._id%>/delete">
+    <button class = 'deleteButton lnr lnr-trash' type="button"></button>
+  </a>
+  <br>
+</div>

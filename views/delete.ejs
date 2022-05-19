@@ -7,9 +7,10 @@
 
 </div>
     <div class="confirmDelete">
-      <h2>Are you sure you want to delete <%=beer.name%> from your database?</h2>
+      <h2>Are you sure you want to delete '<%=beer.name%>' from your database?</h2>
+      <h4>NOTICE: THIS ACTION CANNOT BE UNDONE</h4>
     <form action="/beer/library/<%=beer._id%>?_method=DELETE" method="POST">
-      <input class = 'deleteButton'  type="submit" value="Yes, Delete Forever"/>
+      <input class = 'confirmButton'  type="submit" value="Yes, Delete Forever"/>
     </form>
 
     <a href="/beer/library">

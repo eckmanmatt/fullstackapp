@@ -15,13 +15,6 @@ router.get('/seed',(req,res) => {
 
 
 
-//add new entry
-router.get('/library/addnew',(req,res) => {
-  res.render('add.ejs',{
-    titleTag:'Add to Library'
-  })
-})
-
 
 
 //delete entry
@@ -100,10 +93,20 @@ router.get('/',(req,res) => {
     })
   })
 
-  router.post('/beer/library',(req,res) => {
-    Beers.create(req.body,(error,addNew) => {
-      res.redirect('/beer/library/')
+  //add new entry
+  router.get('/library/addnew',(req,res) => {
+    res.render('add.ejs',{
+      titleTag:'Add to Library'
     })
   })
+
+  router.post('/library/',(req,res) => {
+    Beers.create(req.body,(error,addNew) => {
+      res.redirect('/beer/library')
+    })
+  })
+
+
+
 
   module.exports = router
