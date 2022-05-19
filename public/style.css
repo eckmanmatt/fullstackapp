@@ -1,6 +1,7 @@
 body{
   background: palegoldenrod;
   scroll-behavior: smooth;
+  font-family: 'Rakkas', cursive;
 }
 
 .titlebar{
