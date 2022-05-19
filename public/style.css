@@ -155,6 +155,11 @@ li{
 
 a {
   text-decoration: none;
+  color: black;
+}
+a h4 {
+  text-decoration: none;
+  color: black;
 }
 
 a:visited{
